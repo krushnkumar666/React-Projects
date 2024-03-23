@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +36,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+.quantity button {
+  width: 60px;
+  height: 40px;
+  background: #333;
+  color: #fff;
+  font-size: 30px;
+}
+.quantity input {
+  width: 80px;
+  height: 35px;
+  font-size: 30px;
+  text-align: center;
+}
+.container {
+  margin-top: 10%;
 }

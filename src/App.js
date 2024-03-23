@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import Themechanging from "./components/Themechanging";
+// import {incNumber,decNumber} from "./actions/index"
+
 
 function App() {
+  const theme = useSelector((state) => state.changeTheTheme);
+  const myState = useSelector((state)=>state.changeTheNumber)
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ backgroundColor: theme === "DARK" ? "black" : "white" }}>
+      <Themechanging/>
+      {/* <div className="container">
+        <h1>Increment/Decrement Counter</h1>
+        <h3>Using Redux</h3>
+        <div className="quantity">
+          <button onClick={()=> dispatch(decNumber())} className="quantity-minus" title="decrement">-</button>
+          <input name="quantity" type="text" className="quantity-inp" value={myState}/>
+          <button onClick={()=> dispatch(incNumber())} className="quantity-plus" title="increment">+</button>
+        </div>
+      </div> */}
     </div>
   );
 }
